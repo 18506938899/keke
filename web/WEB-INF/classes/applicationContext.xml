@@ -18,16 +18,16 @@
     </context:component-scan>
 
     <!--导入数据库属性的配置文件，方法一-->
-    <!--<context:property-placeholder location="classpath:mysql.properties"/>-->
+    <context:property-placeholder location="classpath:mysql.properties"/>
 
     <!--配置事务-->
     <!-- 声明使用注解式事务 -->
     <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 
     <!--导入数据库属性的配置文件，方法二-->
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:mysql.properties"/>
-    </bean>
+    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="location" value="classpath:mysql.properties"/>-->
+    <!--</bean>-->
 
     <!--spring自带的数据源链接，还有apache插件自带的dbcp和c3p0数据源的链接-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

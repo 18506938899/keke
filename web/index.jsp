@@ -6,7 +6,7 @@
     <meta http-equiv="description" content="运用CSS3和CSS滤镜做的精美的登录界面，无用到图片的喔！">
     <meta http-equiv="author" content="chenjinfei">
     <meta http-equiv="date" content="2012-2-6">
-    <title>登录</title>
+    <title>登录页面</title>
     <link rel="stylesheet" href="style/common/common.css">
     <style type="text/css">
         body {
