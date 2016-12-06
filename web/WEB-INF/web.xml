@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:applicationContext.xml</param-value>
+    </context-param>
+
+    <!--该监听器的作用就是处理由javabean产生的拦截器的缓存-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    s
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+
+
+    <!--springmvc-->
+    <servlet>
+        <servlet-name>springMvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/applicationContext-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>HelloWorldServlet</servlet-name>-->
+        <!--<servlet-class>servlet.HelloWorldServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>HelloWorldServlet</servlet-name>-->
+        <!--<url-pattern>/servlet/HelloWorldServlet</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+    <!--拦截-->
+    <servlet-mapping>
+        <servlet-name>springMvc</servlet-name>
+        <url-pattern>*.shtml</url-pattern>
+    </servlet-mapping>
+
+    <!--欢迎页-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
+        
