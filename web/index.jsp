@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <%--head--%>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <meta http-equiv="description" content="运用CSS3和CSS滤镜做的精美的登录界面，无用到图片的喔！">
     <meta http-equiv="author" content="chenjinfei">
