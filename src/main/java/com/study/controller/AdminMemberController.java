@@ -17,8 +17,12 @@ import java.util.Map;
 @Controller
 public class AdminMemberController {
 
-    @Autowired(required =false)
     private MemberService memberService;
+
+    @Autowired(required =false)
+    public void setMemberService(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     @RequestMapping(value = "/login",method=RequestMethod.POST)
     public ModelAndView login(String username,String password) {
