@@ -3,7 +3,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://java.sun.com/jsf/composite"
        xsi:schemaLocation="
             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
@@ -93,5 +93,27 @@
         <!--//必须存在set方法,或者是只带该属性做为参数的构造器-->
         <constructor-arg value="zsk"/>
         <constructor-arg ref="helloMybatis"/>
+        <property name="names">
+            <list>
+                <value>zsk1</value>
+                <value>zsh2</value>
+            </list>
+        </property>
+        <property name="sets">
+            <set>
+                <value>zsk3</value>
+            </set>
+        </property>
+        <property name="nameAge">
+            <map>
+                <entry key="keke" value="1"/>
+                <entry key="zsk" value="2"/>
+            </map>
+        </property>
+        <property name="nameGender">
+            <props>
+                <prop key="keke">keke</prop>
+            </props>
+        </property>
     </bean>
 </beans>
