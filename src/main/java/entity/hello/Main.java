@@ -17,7 +17,7 @@ public class Main {
 
 //        spring方法
         //创建ioc容器
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:applicationContext.xml");
 
         HelloWorldSpring helloWorldSpring = (HelloWorldSpring) applicationContext.getBean("helloWorldSpring");
 

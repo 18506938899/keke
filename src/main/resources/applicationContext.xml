@@ -62,7 +62,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!--配置事务通知-->
+    <!--事务配置-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <!--事务的传播行为-->
         <tx:attributes>
@@ -85,4 +85,13 @@
     <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 
 
+    <bean id="helloMybatis" class="entity.hello.HelloWorldMybatis"/>
+
+    <bean id="helloWorldSpring" class="entity.hello.HelloWorldSpring">
+        <property name="name" value="test"/>
+        <property name="age" value="25"/>
+        <!--//必须存在set方法,或者是只带该属性做为参数的构造器-->
+        <constructor-arg value="zsk"/>
+        <constructor-arg ref="helloMybatis"/>
+    </bean>
 </beans>
