@@ -31,10 +31,10 @@
 
     <!--spring自带的数据源链接，还有apache插件自带的dbcp和c3p0数据源的链接-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -85,35 +85,35 @@
     <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 
 
-    <bean id="helloMybatis" class="entity.hello.HelloWorldMybatis"/>
+    <!--<bean id="helloMybatis" class="entity.hello.HelloWorldMybatis"/>-->
 
-    <bean id="helloWorldSpring" class="entity.hello.HelloWorldSpring">
-        <property name="name" value="test"/>
-        <property name="age" value="25"/>
-        <!--//必须存在set方法,或者是只带该属性做为参数的构造器-->
-        <constructor-arg value="zsk"/>
-        <constructor-arg ref="helloMybatis"/>
-        <property name="names">
-            <list>
-                <value>zsk1</value>
-                <value>zsh2</value>
-            </list>
-        </property>
-        <property name="sets">
-            <set>
-                <value>zsk3</value>
-            </set>
-        </property>
-        <property name="nameAge">
-            <map>
-                <entry key="keke" value="1"/>
-                <entry key="zsk" value="2"/>
-            </map>
-        </property>
-        <property name="nameGender">
-            <props>
-                <prop key="keke">keke</prop>
-            </props>
-        </property>
-    </bean>
+    <!--<bean id="helloWorldSpring" class="entity.hello.HelloWorldSpring">-->
+        <!--<property name="name" value="test"/>-->
+        <!--<property name="age" value="25"/>-->
+        <!--&lt;!&ndash;//必须存在set方法,或者是只带该属性做为参数的构造器&ndash;&gt;-->
+        <!--<constructor-arg value="zsk"/>-->
+        <!--<constructor-arg ref="helloMybatis"/>-->
+        <!--<property name="names">-->
+            <!--<list>-->
+                <!--<value>szsk1</value>-->
+                <!--<value>zsh2</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="sets">-->
+            <!--<set>-->
+                <!--<value>zsk3</value>-->
+            <!--</set>-->
+        <!--</property>-->
+        <!--<property name="nameAge">-->
+            <!--<map>-->
+                <!--<entry key="keke" value="1"/>-->
+                <!--<entry key="zsk" value="2"/>-->
+            <!--</map>-->
+        <!--</property>-->
+        <!--<property name="nameGender">-->
+            <!--<props>-->
+                <!--<prop key="keke">keke</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
 </beans>
