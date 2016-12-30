@@ -4,6 +4,7 @@ import com.study.service.MemberService;
 import entity.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,13 +32,16 @@ public class AdminMemberController {
 
     /**
      * springMVC注解@ModelAndAttribute
-     * 用法一:使用在方法体上,每当请求一次目标方法时候,被该注解注解的方法都会首先被调用
+     * 用法一:使用在方法体上,每当请求一次目标方法时候,被该注解注解的方法都会首先被调用.
+     * 如下写法,会返回一个map,key就是member,value就是member对象
+     * 在目标方法中通过map.get("member")得到member
      * 用法而:使用在方法的参数前面,springMvc会首先在数据模型中寻找该属性,赋值给后面的参数对象,
      * 并且会覆盖后面参数对象中存在同名的属性值
      */
-//    @ModelAttribute
-//    public void sayHelloWorld(){
-//        System.out.println("helloWorld");
+//    @ModelAttribute("member")
+//    public Member sayHelloWorld(){
+//        Member member= new Member("","keke","kb24851","",0);
+//        return member;
 //    }
     /**
      * 用户登录
@@ -45,23 +49,26 @@ public class AdminMemberController {
      * @param request
      * @param username
      * @param password
+     * map1 用于介绍被@ModelAndAttribute注解的方法,传递过来的member对象
      * @return
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(HttpServletRequest request, String username, String password) {
+    public ModelAndView login(HttpServletRequest request, String username, String password,
+                              Map<String,Member> map1) {
 //        //获取请求相对路径
 //        String webRealPath = request.getServletPath();
 //        //获取web工程的根目录,也就是web目录的地址
 //        String webRealPath1 = request.getSession().getServletContext().getRealPath("a");
 //        //获取部署的项目的名称
 //        String path=request.getContextPath();
+//        System.out.println(map1.get("member").getUsername());
         Map<String, Object> map = new HashMap<String, Object>();
         Member member = memberService.getMemberByUsername(username);
         if (password.equals(member.getPassword())) {
             return new ModelAndView("/demo1", map);
         } else {
             map.put("failMsg", "登陆失败,请重新登录");
-            return new ModelAndView("/index", null);
+            return new ModelAndView("/false", map);
         }
     }
 
