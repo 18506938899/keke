@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by sk on 2016/12/5.
@@ -26,5 +27,14 @@ public class TestMember {
     public void test1() {
         Member member = memberService.getMemberById("1");
         System.out.println(JSON.toJSONString(member));
+
+        for (int i = 0; i < 10; i++) {
+            if (i == 6) {
+                if(i>0){
+                    continue;
+                }
+            }
+            System.out.print(i + "    ");
+        }
     }
 }

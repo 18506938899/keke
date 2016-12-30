@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: sk
@@ -11,6 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-<p>失败了</p>
+<c:if test="${not empty failMsg}">
+    ${failMsg}
+</c:if>
+<p></p>
 </body>
 </html>

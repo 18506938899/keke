@@ -215,8 +215,13 @@
                             <targetPath>WEB-INF/classes</targetPath>
                             <filtering>true</filtering>
                             <excludes>
-                                <exclude>filters</exclude>
+                                <exclude>
+                                    filters
+                                </exclude>
                             </excludes>
+                            <!--<excludes>-->
+                                <!--<exclude>filters</exclude>-->
+                            <!--</excludes>-->
                         </resource>
                     </webResources>
                 </configuration>
