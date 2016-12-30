@@ -28,6 +28,17 @@ public class AdminMemberController {
         this.memberService = memberService;
     }
 
+
+    /**
+     * springMVC注解@ModelAndAttribute
+     * 用法一:使用在方法体上,每当请求一次目标方法时候,被该注解注解的方法都会首先被调用
+     * 用法而:使用在方法的参数前面,springMvc会首先在数据模型中寻找该属性,赋值给后面的参数对象,
+     * 并且会覆盖后面参数对象中存在同名的属性值
+     */
+//    @ModelAttribute
+//    public void sayHelloWorld(){
+//        System.out.println("helloWorld");
+//    }
     /**
      * 用户登录
      *
@@ -56,6 +67,11 @@ public class AdminMemberController {
 
     /**
      * 文件上传
+     *小知识:@RequestParam使用该注解,会代替request.getParameter(“name”);
+     @RequestParam(value=”name1”) String name2;会把前台name=”name1”的值赋值给变量name2.
+     其中,在括号里会写required=true/false,代表是否需要前端必须要传入参数,
+     如果前端页面中不存在name=pasword1的属性,required=true会报错,required=false会赋值给username变量为null.
+     不写的话默认是required=true.
      *
      * @param uploadFile
      * @param request
