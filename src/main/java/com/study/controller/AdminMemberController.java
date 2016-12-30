@@ -61,7 +61,6 @@ public class AdminMemberController {
 //        String webRealPath1 = request.getSession().getServletContext().getRealPath("a");
 //        //获取部署的项目的名称
 //        String path=request.getContextPath();
-//        System.out.println(map1.get("member").getUsername());
         Map<String, Object> map = new HashMap<String, Object>();
         Member member = memberService.getMemberByUsername(username);
         if (password.equals(member.getPassword())) {

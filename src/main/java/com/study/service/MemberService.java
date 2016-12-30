@@ -2,7 +2,7 @@ package com.study.service;
 
 import entity.member.Member;
 
-/**
+/**service
  * Created by sk on 2016/11/24.
  */
 
