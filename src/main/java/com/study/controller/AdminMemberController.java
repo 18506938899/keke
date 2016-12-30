@@ -67,7 +67,7 @@ public class AdminMemberController {
             return new ModelAndView("/demo1", map);
         } else {
             map.put("failMsg", "登陆失败,请重新登录");
-            return new ModelAndView("/false", map);
+            return new ModelAndView("/fail", map);
         }
     }
 
