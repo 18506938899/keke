@@ -1,5 +1,7 @@
 package entity.member;
 
+import entity.info.Info;
+
 /**
  * Created by sk on 2016/11/23.
  */
@@ -9,8 +11,17 @@ public class Member {
     private String name;
     private Integer gender;
     private String password;
+    private Info info;
 
-//    /**
+    public Info getInfo() {
+        return info;
+    }
+
+    public void setInfo(Info info) {
+        this.info = info;
+    }
+
+    //    /**
 //     * 在java中向一个pojo类设置属性值,可以不需要一个一个setPojo类的属性,可以在该pojo类中,
 //     * 写一个方法,名称与类名相同,无返回类型(也没有void),把需要设置的属性带进去,在方法体内赋值.
 //     *  如果一个类中自定义了一个有参的构造函数,就会覆盖掉系统默认的无参构造函数,

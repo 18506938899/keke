@@ -20,9 +20,16 @@
         <input type="file" id="fileImport" name="fileImport" style="width:200px"/>
         <input type="submit" value="上传" id="upLoadFile"/>
         <c:if test="${not empty finishMsg}">
-        <span style="color: red">
-                ${finishMsg}
-        </span>
+            <c:if test="${empty errorMsg}">
+                  <span style="color: red">
+                          ${finishMsg}
+                  </span>
+            </c:if>
+        </c:if>
+        <c:if test="${not empty fileName}">
+            <c:if test="${empty errorMsg}">
+                <a href="#">${fileName}</a>
+            </c:if>
         </c:if>
     </form>
 </div>

@@ -12,10 +12,18 @@
     </select>
 
 
-    <select id="getMemberByUsername" parameterType="string" resultType="member">
-        select * from
+    <select id="getMemberByUsername" parameterType="string" resultMap="memberResultMapper">
+        select id,name,username,gender,info_id,password from
         <include refid="tableName"/>
         where username=#{username}
     </select>
+
+
+    <!--如果使用association的select则必须在查询语句中查询出关联的id,否则关联查询不出来-->
+    <resultMap id="memberResultMapper" type="entity.member.Member" autoMapping="true">
+        <id property="id" column="id"/>
+        <association property="info" column="info_id"
+                     select="com.study.dao.InfoMapper.getById"/>
+    </resultMap>
 
 </mapper>

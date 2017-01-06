@@ -30,11 +30,18 @@ public class TestMember {
 
         for (int i = 0; i < 10; i++) {
             if (i == 6) {
-                if(i>0){
+                if (i > 0) {
                     continue;
                 }
             }
             System.out.print(i + "    ");
         }
+    }
+
+
+    @Test
+    public void testAssoSelect() {
+        Member member = memberService.getMemberByUsername("18506938899");
+        System.out.println(member.getInfo().getHobbdy());
     }
 }
