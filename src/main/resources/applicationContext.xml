@@ -40,7 +40,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
-        <!--指定mapper文件的存放位置,当mapper文件与mapper接口放在同一位置，则不需要指定-->
+        <!--指定mapperXml文件的存放位置,当mapper文件与mapper接口放在同一位置，则不需要指定-->
         <property name="mapperLocations" value="classpath*:mapper/*Mapper.xml"/>
     </bean>
 
@@ -57,7 +57,7 @@
     <!--</bean>-->
 
 
-    <!--配置事务管理器,配置mybatis操作数据库的配置-->
+    <!--配置事务管理器,配置mybatis操作数据库的配置事务-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>

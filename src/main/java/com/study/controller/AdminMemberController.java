@@ -15,7 +15,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -57,6 +59,8 @@ public class AdminMemberController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(HttpServletResponse response, HttpServletRequest request, String username, String password,
                               Map<String, Member> map1) {
+        //获取客户端的ip地址
+        System.out.println(request.getRemoteAddr());
 //        //获取请求相对路径
 //        String webRealPath = request.getServletPath();
 //        //获取web工程的根目录,也就是web目录的地址

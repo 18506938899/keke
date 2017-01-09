@@ -10,7 +10,7 @@
         <param-value>classpath*:applicationContext.xml</param-value>
     </context-param>
 
-    <!--该监听器的作用就是处理由javabean产生的拦截器的缓存-->
+    <!--该监听器的作用就是当web容器启动时候,会自动装配applicationContext-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -46,6 +46,16 @@
     </servlet>
 
 
+    <!--防止静态文件出现乱码-->
+    <mime-mapping>
+        <extension>htm</extension>
+        <mime-type>text/html;charset=UTF-8</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html;charset=UTF-8</mime-type>
+    </mime-mapping>
     <!--<servlet>-->
     <!--<servlet-name>HelloWorldServlet</servlet-name>-->
     <!--<servlet-class>servlet.HelloWorldServlet</servlet-class>-->
