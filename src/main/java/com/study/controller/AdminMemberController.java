@@ -60,7 +60,7 @@ public class AdminMemberController {
     public ModelAndView login(HttpServletResponse response, HttpServletRequest request, String username, String password,
                               Map<String, Member> map1) {
         //获取客户端的ip地址
-        System.out.println(request.getRemoteAddr());
+//        System.out.println(request.getRemoteAddr());
 //        //获取请求相对路径
 //        String webRealPath = request.getServletPath();
 //        //获取web工程的根目录,也就是web目录的地址
@@ -76,7 +76,7 @@ public class AdminMemberController {
             response.addCookie(cookie);
             //设置session的有效时间
             request.getSession().setMaxInactiveInterval(60*24);
-            return new ModelAndView("/demo1", map);
+            return new ModelAndView("/main", map);
         } else {
             map.put("failMsg", "登陆失败,请重新登录");
             return new ModelAndView("/fail", map);

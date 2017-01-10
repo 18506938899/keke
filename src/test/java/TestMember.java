@@ -61,14 +61,38 @@ public class TestMember {
 //            System.out.println(iterator.next());
 //        }
 
-        //TODO:map集合的存值与取值
+//        TODO:map集合的存值与取值
+//        TODO:HashMap()与HashTable()的区别
+//        TODO:hashMap允许一个键为null,多个值为null
+//        TODO:hashTable不允许存在为null的键存在,它比hashMap慢,因为他是同步的
+
         Map<String, String> map = new HashMap<>();
         map.put("1", "1");
         map.put("2", "2");
         map.put("3", "3");
-        Iterator it=map.keySet().iterator();
+        map.put(null, "4");
+        Iterator it = map.keySet().iterator();
         while (it.hasNext()) {
             System.out.println(map.get(it.next()));
         }
+
+        Map<String, Object> mapTable = new Hashtable<>();
+//        mapTable.put(null,"5");
+        Iterator itTable = mapTable.keySet().iterator();
+        while (itTable.hasNext()) {
+            System.out.println(mapTable.get(it.next()));
+        }
+    }
+
+
+    @Test
+    public void testMath() {
+        double i = -2.5;
+        //四舍五入
+        System.out.println(Math.round(i));//-2
+        //不大于的整数
+        System.out.println(Math.floor(i));//-3.0
+        //不小于的整数
+        System.out.println(Math.ceil(i));//-2.0
     }
 }
